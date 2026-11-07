@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="LUMEEI AI Mind – böngészős tesztelő (Cloud Run)" />
+    <title>LUMEEI AI Mind – Web tesztelő</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <h1>LUMEEI AI Mind</h1>
+          <p>Böngészős tesztelő · ugyanaz a Cloud Run API, mint a mobilon</p>
+        </div>
+        <div class="health" id="healthPills" aria-live="polite">
+          <span class="pill warn" id="pillOk">health…</span>
+        </div>
+      </header>
+
+      <section class="settings" aria-label="API beállítások">
+        <input
+          id="apiUrl"
+          type="url"
+          spellcheck="false"
+          placeholder="https://….run.app"
+          aria-label="Cloud Run alap URL"
+        />
+        <label class="chk">
+          <input id="showDebug" type="checkbox" checked />
+          Debug panel
+        </label>
+        <button type="button" class="secondary" id="btnPing">Health</button>
+      </section>
+
+      <div class="workspace">
+        <section class="panel" aria-label="Chat">
+          <h2>Chat</h2>
+          <div id="messages" role="log" aria-relevant="additions"></div>
+          <form class="composer" id="chatForm">
+            <textarea
+              id="question"
+              rows="2"
+              placeholder="Írj magyarul (pl. Ki volt Koppány?)"
+              required
+            ></textarea>
+            <button type="submit" id="btnSend">Küldés</button>
+          </form>
+        </section>
+
+        <aside class="panel" id="debugPanel" aria-label="Debug">
+          <h2>Debug</h2>
+          <div id="debug">Indítsd a health ellenőrzést, majd kérdezz.</div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        Firebase Hostingra tehető statikus oldal · API:
+        <code>/health</code>, <code>/v1/translate</code>, <code>/v1/chat</code>
+      </footer>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

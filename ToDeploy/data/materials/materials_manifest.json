@@ -1,0 +1,45 @@
+{
+  "version": 18,
+  "materials": [
+    {
+      "format": "llm_pack",
+      "dir": "tortenelem_9_llm",
+      "documentId": "tortenelem_9",
+      "title": "Töri 5.",
+      "languages": [
+        "en"
+      ],
+      "prebuiltIndex": "prebuilt_index.bin"
+    },
+    {
+      "format": "llm_pack",
+      "dir": "tortenelem_6",
+      "documentId": "tortenelem_6",
+      "title": "Töri 6.",
+      "languages": [
+        "en"
+      ],
+      "prebuiltIndex": "prebuilt_index.bin"
+    },
+    {
+      "format": "llm_pack",
+      "dir": "tortenelem_7",
+      "documentId": "tortenelem_7",
+      "title": "Töri 7.",
+      "languages": [
+        "en"
+      ],
+      "prebuiltIndex": "prebuilt_index.bin"
+    },
+    {
+      "format": "llm_pack",
+      "dir": "tortenelem_8",
+      "documentId": "tortenelem_8",
+      "title": "Töri 8.",
+      "languages": [
+        "en"
+      ],
+      "prebuiltIndex": "prebuilt_index.bin"
+    }
+  ]
+}

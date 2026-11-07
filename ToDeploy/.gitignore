@@ -1,0 +1,10 @@
+.venv/
+data/plant_library/
+__pycache__/
+*.pyc
+.env
+models/*.gguf
+models/*.GGUF
+data/embedding/model.onnx
+*.log
+.DS_Store

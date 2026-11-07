@@ -1,0 +1,7 @@
+# Optional: local GGUF via llama.cpp
+# Needs a C++ toolchain on Windows (Visual Studio Build Tools + CMake),
+# or install a prebuilt wheel if one exists for your Python/platform.
+#
+# Without this package the API still runs: RAG + context-fallback answers.
+
+llama-cpp-python==0.3.8

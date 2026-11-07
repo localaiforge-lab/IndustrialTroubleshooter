@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Üzemi hibakereső</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="mast">
+        <div>
+          <p class="eyebrow">Bármilyen gyár</p>
+          <h1>Üzemi hibakereső</h1>
+          <p class="lead">
+            Töltse fel a gépkönyvet, a hibajegyzéket vagy a munkautasítást.
+            A válasz csak ezekből a dokumentumokból készül.
+          </p>
+        </div>
+        <p class="mode" id="answerMode">A tudástár betöltése…</p>
+      </header>
+
+      <section class="stats" aria-label="A tudástár állapota">
+        <div>
+          <span id="statDocs">0</span>
+          <small>dokumentum</small>
+        </div>
+        <div>
+          <span id="statParts">0</span>
+          <small>beolvasott rész</small>
+        </div>
+        <div>
+          <span id="statCodes">0</span>
+          <small>hibakód</small>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Nézet">
+        <button type="button" id="tabWork" class="tab" aria-selected="true">Hibakeresés</button>
+        <button type="button" id="tabOverview" class="tab" aria-selected="false">Áttekintés</button>
+      </nav>
+
+      <p class="banner" id="banner" hidden></p>
+
+      <div id="work">
+        <div class="steps">
+          <section class="card" id="uploadCard">
+            <div class="stephead">
+              <span class="num" id="uploadStep">1</span>
+              <div>
+                <h2>Dokumentumok feltöltése</h2>
+                <p>Egyszerre több fájl vagy egy egész mappa is mehet.</p>
+              </div>
+            </div>
+
+            <label class="field" for="area">
+              Melyik gép vagy terület? <span>Nem kötelező, de segít a keresésben.</span>
+              <input id="area" type="text" maxlength="80" placeholder="például csomagológép, kazán 2" />
+            </label>
+
+            <div class="drop" id="drop">
+              <p class="drop-title">Húzza ide a fájlokat</p>
+              <p>vagy</p>
+              <button type="button" class="primary" id="browse">Fájlok kiválasztása</button>
+              <input id="file" type="file" multiple hidden />
+              <p class="hint">
+                PDF, Word, Excel, PowerPoint, szöveg, CSV, vagy ezek egy zip csomagban.
+                Hibajegyzéknél a sorok együtt maradnak a kóddal, a tünettel és a teendővel.
+              </p>
+            </div>
+            <p class="hint alone">Legfeljebb 40 fájl, fájlonként 25 MB.</p>
+            <div id="uploadOut" class="results" aria-live="polite"></div>
+          </section>
+
+          <section class="card" id="askCard">
+            <div class="stephead">
+              <span class="num" id="askStep">2</span>
+              <div>
+                <h2>Kérdés vagy hibaleírás</h2>
+                <p>Írja úgy, ahogy a gépen látja: kód, tünet, gép neve.</p>
+              </div>
+            </div>
+            <form id="askForm">
+              <label class="field" for="question">
+                Mi a hiba, vagy mire kíváncsi?
+                <textarea
+                  id="question"
+                  rows="4"
+                  placeholder="Például: Mit jelent az E-204? A szállítószalag nem indul, a motor meleg."
+                ></textarea>
+              </label>
+              <button type="submit" class="primary wide" id="askBtn">Válasz a dokumentumokból</button>
+            </form>
+            <div id="answer" class="answer" hidden></div>
+          </section>
+        </div>
+      </div>
+
+      <section class="card" id="overview" hidden>
+        <h2>A tudástár állapota</h2>
+        <p class="hint alone">
+          Itt látszik, miből tud a hibakereső dolgozni. A régi változatot törölje, ha frisset töltött fel helyette.
+        </p>
+        <div id="library"></div>
+      </section>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
